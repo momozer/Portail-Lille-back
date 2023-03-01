@@ -5,6 +5,8 @@ import com.niji.lille.portailLille.repository.UserRepository;
 import com.niji.lille.portailLille.servcie.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -20,21 +22,24 @@ public class UserServcieImpl implements UserService {
 
     @Override
     public List<Users> findAll() {
-        return null;
+        return userRepository.findAll();
     }
 
     @Override
     public Users save(Users entity) {
-        return null;
+        return userRepository.save(entity);
     }
 
     @Override
     public Users findById(String id) {
-        return null;
+        return userRepository.findById(id).orElseThrow(() ->{
+            logger.warn("l'id : " + id + " est invalide");
+            return new ResponseStatusException(HttpStatus.NOT_FOUND);
+        });
     }
 
     @Override
-    public Void deleteById(String id) {
-        return null;
+    public void deleteById(String id) {
+        userRepository.deleteById(id);
     }
 }

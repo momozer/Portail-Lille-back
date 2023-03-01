@@ -1,9 +1,11 @@
 package com.niji.lille.portailLille.servcie;
 
 import com.niji.lille.portailLille.entity.Users;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface UserService {
     /**
      *Affiche tous les users
@@ -30,5 +32,5 @@ public interface UserService {
      * @param id de l'user à supprimer
      *
      */
-    Void deleteById(String id);
+    void deleteById(String id);
 }
