@@ -28,11 +28,14 @@ public class UserServcieImpl implements UserService {
 
     @Override
     public Users save(Users entity) {
+        logger.info("Sauvegarde, enregistrement d'un nouvel user en fonction des renseignements fournis" +
+                "par l'utilisateur dans le body: " + entity);
         return userRepository.save(entity);
     }
 
     @Override
     public Users findById(String id) {
+        logger.info("Recherche d'un user avec son id : "+id);
         return userRepository.findById(id).orElseThrow(() ->{
             logger.warn("l'id : " + id + " est invalide");
             return new ResponseStatusException(HttpStatus.NOT_FOUND);
@@ -41,17 +44,20 @@ public class UserServcieImpl implements UserService {
 
     @Override
     public List<Users> findByNom(String nom) {
+        logger.info("recherche un ou plusieur users avec le nom: "+nom);
         return userRepository.findByNom(nom);
     }
 
     @Override
     public List<Users> findByPrenom(String prenom) {
+        logger.info("recherche un ou plusieurs user avec le prenom: "+prenom);
         return userRepository.findByPrenom(prenom);
     }
 
 
     @Override
     public void deleteById(String id) {
+        logger.info("supprime le user avec l'id : "+id);
         userRepository.deleteById(id);
     }
 }
