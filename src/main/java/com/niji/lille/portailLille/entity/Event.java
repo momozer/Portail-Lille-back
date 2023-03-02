@@ -6,7 +6,9 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.SimpleTimeZone;
 
 @Data
 @Document
@@ -14,8 +16,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class Event {
     private String id;
-    private LocalDate dateDébut;
-    private LocalDate dateFin;
+    private LocalDate dateDebut;
+    private Integer heure;
     private Category category;
     private String lieu;
     private String commentaire;
