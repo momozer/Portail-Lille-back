@@ -14,6 +14,8 @@ public class Place {
     @Id
     private String id;
 
+    private boolean disponible;
+
 
 
 }
