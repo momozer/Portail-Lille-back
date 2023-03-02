@@ -28,6 +28,20 @@ public interface UserService {
     Users findById(String id);
 
     /**
+     * Permet de récupérer une liste de user avec son nom
+     * @Param nom
+     * @return la liste de user comprenant le nom indiqué dans la recherche
+     */
+    List<Users> findByNom(String nom);
+
+    /**
+     * Permet de récupérer une liste de user avec son prenom
+     * @Param prenom
+     * @return la liste des users comportant le prenom renseigné
+     */
+    List<Users> findByPrenom(String prenom);
+
+    /**
      * Permet de supprimer un user avec son id
      * @param id de l'user à supprimer
      *

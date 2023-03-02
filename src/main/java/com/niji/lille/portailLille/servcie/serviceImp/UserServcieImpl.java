@@ -22,6 +22,7 @@ public class UserServcieImpl implements UserService {
 
     @Override
     public List<Users> findAll() {
+        logger.info("Récupération de tous les users existants");
         return userRepository.findAll();
     }
 
@@ -37,6 +38,17 @@ public class UserServcieImpl implements UserService {
             return new ResponseStatusException(HttpStatus.NOT_FOUND);
         });
     }
+
+    @Override
+    public List<Users> findByNom(String nom) {
+        return userRepository.findByNom(nom);
+    }
+
+    @Override
+    public List<Users> findByPrenom(String prenom) {
+        return userRepository.findByPrenom(prenom);
+    }
+
 
     @Override
     public void deleteById(String id) {
