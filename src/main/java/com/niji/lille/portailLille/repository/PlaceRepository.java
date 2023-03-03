@@ -1,4 +1,7 @@
 package com.niji.lille.portailLille.repository;
 
-public interface PlaceRepository {
+import com.niji.lille.portailLille.entity.Place;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface PlaceRepository extends MongoRepository<Place, String> {
 }

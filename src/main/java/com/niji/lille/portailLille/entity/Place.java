@@ -12,13 +12,15 @@ public class Place {
     @Id
     private String id;
 
+    private String name;
     private boolean occupe;
 
     public Place(){
     }
 
-    public Place(String id, boolean occupe){
+    public Place(String id, String name, boolean occupe){
         this.id = id;
+        this.name = name;
         this.occupe = occupe;
     }
 
@@ -31,6 +33,14 @@ public class Place {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name){
+        this.name = name;
     }
 
     public boolean isOccupe() {

@@ -10,8 +10,6 @@ import java.time.LocalDate;
 
 @Data
 @Document
-@AllArgsConstructor
-@NoArgsConstructor
 public class Users {
     @Id
     private String id;
