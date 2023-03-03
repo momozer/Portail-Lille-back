@@ -8,14 +8,36 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Document
-@AllArgsConstructor
-@NoArgsConstructor
 public class Place {
     @Id
     private String id;
 
-    private boolean disponible;
+    private boolean occupe;
+
+    public Place(){
+    }
+
+    public Place(String id, boolean occupe){
+        this.id = id;
+        this.occupe = occupe;
+    }
+
+    //getter et setter
 
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public boolean isOccupe() {
+        return occupe;
+    }
+
+    public void setOccupe(boolean occupe) {
+        this.occupe = occupe;
+    }
 }
