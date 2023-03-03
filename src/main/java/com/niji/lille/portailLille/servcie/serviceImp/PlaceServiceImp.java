@@ -10,6 +10,9 @@ public class PlaceServiceImp implements PlaceService {
 
     private PlaceRepository placeRepository;
 
+    public PlaceServiceImp(PlaceRepository placeRepository) {
+    }
+
     @Override
     public List<Place> getAllPlaces() {
         return placeRepository.findAll();
