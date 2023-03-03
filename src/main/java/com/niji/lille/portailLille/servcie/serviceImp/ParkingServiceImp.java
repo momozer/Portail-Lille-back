@@ -9,6 +9,9 @@ import java.util.List;
 public class ParkingServiceImp implements ParkingService {
     private ParkingRepository parkingRepository;
 
+    public ParkingServiceImp(ParkingRepository parkingRepository) {
+    }
+
     @Override
     public List<Parking> findAll() {
         return parkingRepository.findAll();
