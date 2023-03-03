@@ -12,18 +12,18 @@ import java.util.List;
 
 @Data
 @Document
-@AllArgsConstructor
 public class Parking {
     @Id
     private String id;
 
     private String name;
 
-    private List<Place> places = new ArrayList<>();
+    private List<Place> places;
 
-    public Parking(String id, String name) {
+    public Parking(String id, String name, List<Place> places) {
         this.id = id;
         this.name = name;
+        this.places = places;
     }
     public Parking() {}
     // getters and setters
