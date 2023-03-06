@@ -1,4 +1,7 @@
 package com.niji.lille.portailLille.repository;
 
-public interface CafeRepository {
+import com.niji.lille.portailLille.entity.PacketCafe;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface CafeRepository extends MongoRepository<PacketCafe, String> {
 }

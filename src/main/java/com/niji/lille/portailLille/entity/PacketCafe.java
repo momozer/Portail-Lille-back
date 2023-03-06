@@ -1,8 +1,12 @@
 package com.niji.lille.portailLille.entity;
 
+import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-public class Cafe {
+@Data
+@Document
+public class PacketCafe {
     @Id
     private String id;
 
@@ -10,20 +14,22 @@ public class Cafe {
 
     private String lienCagnotte;
 
-    private Integer paquetCafe;
+    private int quantite;
 
-    public Cafe() {
+    private double price;
+
+    public PacketCafe() {
     }
 
-    public Cafe(String id, String nom, String lienCagnotte, Integer paquetCafe) {
+    public PacketCafe(String id, String nom, String lienCagnotte, int quantite, double price) {
         this.id = id;
         this.nom = nom;
         this.lienCagnotte = lienCagnotte;
-        this.paquetCafe = paquetCafe;
+        this.quantite = quantite;
+        this.price = price;
     }
 
     //Getter et setter:
-
 
     public String getId() {
         return id;
@@ -49,11 +55,19 @@ public class Cafe {
         this.lienCagnotte = lienCagnotte;
     }
 
-    public Integer getPaquetCafe() {
-        return paquetCafe;
+    public int getQuantite() {
+        return quantite;
     }
 
-    public void setPaquetCafe(Integer paquetCafe) {
-        this.paquetCafe = paquetCafe;
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
