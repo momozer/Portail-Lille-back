@@ -10,6 +10,10 @@ public class CafeServiceImp implements CafeService {
 
     private CafeRepository cafeRepository;
 
+    public CafeServiceImp(CafeRepository cafeRepository) {
+
+    }
+
     @Override
     public Cafe getLien() {
         return cafeRepository.getLien();
