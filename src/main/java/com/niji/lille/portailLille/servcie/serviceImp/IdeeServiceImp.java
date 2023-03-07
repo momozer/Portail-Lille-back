@@ -10,6 +10,7 @@ import java.util.List;
 public class IdeeServiceImp implements IdeeService {
 
 
+    @Autowired
     private IdeeRepository ideeRepository;
 
     public IdeeServiceImp(IdeeRepository ideeRepository){}

@@ -3,10 +3,12 @@ package com.niji.lille.portailLille.servcie.serviceImp;
 import com.niji.lille.portailLille.entity.Parking;
 import com.niji.lille.portailLille.repository.ParkingRepository;
 import com.niji.lille.portailLille.servcie.ParkingService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class ParkingServiceImp implements ParkingService {
+    @Autowired
     private ParkingRepository parkingRepository;
 
     public ParkingServiceImp(ParkingRepository parkingRepository) {

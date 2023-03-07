@@ -3,11 +3,13 @@ package com.niji.lille.portailLille.servcie.serviceImp;
 import com.niji.lille.portailLille.entity.Place;
 import com.niji.lille.portailLille.repository.PlaceRepository;
 import com.niji.lille.portailLille.servcie.PlaceService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class PlaceServiceImp implements PlaceService {
 
+    @Autowired
     private PlaceRepository placeRepository;
 
     public PlaceServiceImp(PlaceRepository placeRepository) {
