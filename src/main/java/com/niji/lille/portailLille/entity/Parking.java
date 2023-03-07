@@ -22,6 +22,8 @@ public class Parking {
 
     private Integer placeLibre;
 
+    private Integer placeMax = 6;
+
     public Parking(String id, String name, List<Place> places, Integer placeLibre) {
         this.id = id;
         this.name = name;
@@ -61,5 +63,9 @@ public class Parking {
 
     public void setPlaceLibre(Integer placeLibre) {
         this.placeLibre = placeLibre;
+    }
+
+    public Integer getPlaceMax(){
+        return placeMax;
     }
 }
