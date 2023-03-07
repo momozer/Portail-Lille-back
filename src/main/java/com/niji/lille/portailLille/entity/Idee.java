@@ -8,8 +8,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Document
-@AllArgsConstructor
-@NoArgsConstructor
 public class Idee {
     @Id
     private String id;
