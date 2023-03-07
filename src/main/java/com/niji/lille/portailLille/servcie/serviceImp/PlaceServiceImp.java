@@ -32,7 +32,7 @@ public class PlaceServiceImp implements PlaceService {
     public Place updatePlace(String id, Place entity) {
         Place existingPlace = placeRepository.findById(id).orElse(null);
         if (existingPlace != null) {
-            existingPlace.setName(entity.getName());
+            existingPlace.setNom(entity.getNom());
             existingPlace.setOccupe(entity.isOccupe());
             return placeRepository.save(existingPlace);
         } else {

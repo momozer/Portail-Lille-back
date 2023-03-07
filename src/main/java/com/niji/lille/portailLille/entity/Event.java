@@ -8,35 +8,34 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.SimpleTimeZone;
 
 @Data
 @Document
-@AllArgsConstructor
-@NoArgsConstructor
 public class Event {
     private String id;
-    private LocalDate dateDebut;
-    private Integer heure;
+    private LocalDate dateDebut; // A voir pour le typage
+    private Integer heure; //A voir pour le typage
     private Category category;
     private String lieu;
     private String commentaire;
 
     @DBRef
-    private Users participant;
+    private List<Users> participants;
     @DBRef
     private Users organisateur;
 
 
 
-    public Event(String id, LocalDate dateDebut, Integer heure, Category category, String lieu, String commentaire, Users participant, Users organisateur) {
+    public Event(String id, LocalDate dateDebut, Integer heure, Category category, String lieu, String commentaire, List<Users> participants, Users organisateur) {
         this.id = id;
         this.dateDebut = dateDebut;
         this.heure = heure;
         this.category = category;
         this.lieu = lieu;
         this.commentaire = commentaire;
-        this.participant = participant;
+        this.participants = participants;
         this.organisateur = organisateur;
     }
     public Event() {
@@ -90,12 +89,12 @@ public class Event {
         this.commentaire = commentaire;
     }
 
-    public Users getParticipant() {
-        return participant;
+    public List<Users> getParticipants() {
+        return participants;
     }
 
-    public void setParticipant(Users participant) {
-        this.participant = participant;
+    public void setParticipants(List<Users> participants) {
+        this.participants = participants;
     }
 
     public Users getOrganisateur() {
