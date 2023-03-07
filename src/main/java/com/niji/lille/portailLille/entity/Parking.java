@@ -20,10 +20,13 @@ public class Parking {
 
     private List<Place> places;
 
-    public Parking(String id, String name, List<Place> places) {
+    private Integer placeLibre;
+
+    public Parking(String id, String name, List<Place> places, Integer placeLibre) {
         this.id = id;
         this.name = name;
         this.places = places;
+        this.placeLibre = placeLibre;
     }
     public Parking() {}
     // getters and setters
@@ -50,5 +53,13 @@ public class Parking {
 
     public void setPlaces(List<Place> places) {
         this.places = places;
+    }
+
+    public Integer getPlaceLibre() {
+        return placeLibre;
+    }
+
+    public void setPlaceLibre(Integer placeLibre) {
+        this.placeLibre = placeLibre;
     }
 }
