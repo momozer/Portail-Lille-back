@@ -1,13 +1,16 @@
 package com.niji.lille.portailLille.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.cglib.core.Local;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.SimpleTimeZone;
 
@@ -15,8 +18,9 @@ import java.util.SimpleTimeZone;
 @Document
 public class Event {
     private String id;
-    private LocalDate dateDebut; // A voir pour le typage
-    private Integer heure; //A voir pour le typage
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDate datetime;
     private Category category;
     private String lieu;
     private String commentaire;
@@ -28,10 +32,9 @@ public class Event {
 
 
 
-    public Event(String id, LocalDate dateDebut, Integer heure, Category category, String lieu, String commentaire, List<Users> participants, Users organisateur) {
+    public Event(String id, LocalDate dateTime, Category category, String lieu, String commentaire, List<Users> participants, Users organisateur) {
         this.id = id;
-        this.dateDebut = dateDebut;
-        this.heure = heure;
+        this.datetime = dateTime;
         this.category = category;
         this.lieu = lieu;
         this.commentaire = commentaire;
@@ -49,20 +52,12 @@ public class Event {
         this.id = id;
     }
 
-    public LocalDate getDateDebut() {
-        return dateDebut;
+    public LocalDate getDatetime() {
+        return datetime;
     }
 
-    public void setDateDebut(LocalDate dateDebut) {
-        this.dateDebut = dateDebut;
-    }
-
-    public Integer getHeure() {
-        return heure;
-    }
-
-    public void setHeure(Integer heure) {
-        this.heure = heure;
+    public void setDatetime(LocalDate datetime) {
+        this.datetime = datetime;
     }
 
     public Category getCategory() {
