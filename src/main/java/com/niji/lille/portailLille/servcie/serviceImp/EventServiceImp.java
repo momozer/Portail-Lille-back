@@ -37,10 +37,11 @@ public class EventServiceImp implements EventService {
     }
 
     @Override
-    public List<Event> findByDateDebut(LocalDate dateDebut) {
-        logger.info("Recherche d'un event par dateDebut renseignée: " + dateDebut);
-        return eventRepository.findByDateDebut(dateDebut);
+    public List<Event> findByDateTime(LocalDate dateTime) {
+        logger.info("Recherche d'un event par dateDebut renseignée: " + dateTime);
+        return eventRepository.findByDateDebut(dateTime);
     }
+
 
     @Override
     public List<Event> findByCategory(Category category) {
@@ -65,13 +66,9 @@ public class EventServiceImp implements EventService {
             event.setCategory(event.getCategory());
         } else event.setCategory(entity.getCategory());
 
-        if (entity.getDateDebut() == null) {
-            event.setDateDebut(event.getDateDebut());
-        } else event.setDateDebut((entity.getDateDebut()));
-
-        if (entity.getHeure() == null) {
-            event.setHeure(event.getHeure());
-        } else event.setHeure(entity.getHeure());
+        if (entity.getDateTime() == null) {
+            event.setDateTime(event.getDateTime());
+        } else event.setDateTime((entity.getDateTime()));
 
         if (entity.getLieu() == null) {
             event.setLieu(event.getLieu());

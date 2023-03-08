@@ -29,9 +29,9 @@ public class EventController {
         return eventService.save(entity);
     }
 
-    @GetMapping("{dateDebut}")
-    public List<Event> findByDateDebut(@PathVariable LocalDate dateDebut) {
-        return eventService.findByDateDebut(dateDebut);
+    @GetMapping("{dateTime}")
+    public List<Event> findByDateTime(@PathVariable LocalDate dateTime) {
+        return eventService.findByDateTime(dateTime);
     }
 
     @GetMapping("{category}")

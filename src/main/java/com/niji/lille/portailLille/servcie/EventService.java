@@ -24,10 +24,10 @@ public interface EventService {
     Event save (Event entity);
 
     /**Permet de chercher un event avec sa dateDebut
-     * @param dateDebut de l'event recherché
+     * @param dateTime de l'event recherché
      * @return l'event commençant à la dateDebut
      */
-    List<Event> findByDateDebut(LocalDate dateDebut);
+    List<Event> findByDateTime(LocalDate dateTime);
 
     /**
      * Permet de cherche un event avec sa catégorie

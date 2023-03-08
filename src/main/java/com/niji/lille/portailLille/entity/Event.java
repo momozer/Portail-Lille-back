@@ -16,11 +16,13 @@ import java.util.SimpleTimeZone;
 
 @Data
 @Document
+@AllArgsConstructor
+@NoArgsConstructor
 public class Event {
     private String id;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDate datetime;
+    private LocalDate dateTime;
     private Category category;
     private String lieu;
     private String commentaire;
@@ -31,19 +33,6 @@ public class Event {
     private Users organisateur;
 
 
-
-    public Event(String id, LocalDate dateTime, Category category, String lieu, String commentaire, List<Users> participants, Users organisateur) {
-        this.id = id;
-        this.datetime = dateTime;
-        this.category = category;
-        this.lieu = lieu;
-        this.commentaire = commentaire;
-        this.participants = participants;
-        this.organisateur = organisateur;
-    }
-    public Event() {
-
-    }
     public String getId() {
         return id;
     }
@@ -52,12 +41,12 @@ public class Event {
         this.id = id;
     }
 
-    public LocalDate getDatetime() {
-        return datetime;
+    public LocalDate getDateTime() {
+        return dateTime;
     }
 
-    public void setDatetime(LocalDate datetime) {
-        this.datetime = datetime;
+    public void setDateTime(LocalDate dateTime) {
+        this.dateTime = dateTime;
     }
 
     public Category getCategory() {
