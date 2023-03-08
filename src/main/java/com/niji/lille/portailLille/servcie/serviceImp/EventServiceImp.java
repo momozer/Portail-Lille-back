@@ -39,7 +39,7 @@ public class EventServiceImp implements EventService {
     @Override
     public List<Event> findByDateTime(LocalDate dateTime) {
         logger.info("Recherche d'un event par dateDebut renseignée: " + dateTime);
-        return eventRepository.findByDateDebut(dateTime);
+        return eventRepository.findByDateTime(dateTime);
     }
 
 

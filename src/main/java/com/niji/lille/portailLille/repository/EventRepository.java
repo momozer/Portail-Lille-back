@@ -9,6 +9,6 @@ import java.time.LocalDate;
 import java.util.List;
 @Repository
 public interface EventRepository extends MongoRepository<Event, String> {
-    List<Event> findByDateDebut(LocalDate dateDebut);
+    List<Event> findByDateTime(LocalDate dateTime);
     List<Event> findByCategory(Category category);
 }
