@@ -12,6 +12,8 @@ import java.util.List;
 
 @Data
 @Document
+@AllArgsConstructor
+@NoArgsConstructor
 public class Parking {
     @Id
     private String id;
@@ -24,13 +26,6 @@ public class Parking {
 
     private Integer placeMax = 6;
 
-    public Parking(String id, String name, List<Place> places, Integer placeLibre) {
-        this.id = id;
-        this.name = name;
-        this.places = places;
-        this.placeLibre = placeLibre;
-    }
-    public Parking() {}
     // getters and setters
 
     public String getId() {

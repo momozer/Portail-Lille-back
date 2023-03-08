@@ -10,6 +10,8 @@ import java.time.LocalDate;
 
 @Data
 @Document
+@AllArgsConstructor
+@NoArgsConstructor
 public class Users {
     @Id
     private String id;
@@ -21,20 +23,6 @@ public class Users {
     private String phone;
     private String motPasse;
 
-    public Users(String id, String nom, String prenom, String username, LocalDate dateNaissance, String email, String phone, String motPasse) {
-        this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.username = username;
-        this.dateNaissance = dateNaissance;
-        this.email = email;
-        this.phone = phone;
-        this.motPasse = motPasse;
-    }
-
-    public Users() {
-
-    }
 
     public String getId() {
         return id;

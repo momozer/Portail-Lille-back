@@ -8,6 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Document
+@AllArgsConstructor
+@NoArgsConstructor
 public class Idee {
     @Id
     private String id;
@@ -15,17 +17,6 @@ public class Idee {
     private String titre;
     private String description;
 
-
-//constructors:
-    public Idee() {
-    }
-
-    public Idee(String id, Integer vote, String titre, String description) {
-        this.id = id;
-        this.vote = vote;
-        this.titre = titre;
-        this.description = description;
-    }
 
     //getter et setter:
 

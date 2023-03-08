@@ -8,6 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Document
+@AllArgsConstructor
+@NoArgsConstructor
 public class Place {
     @Id
     private String id;
@@ -15,14 +17,6 @@ public class Place {
     private String nom;
     private boolean occupe;
 
-    public Place(){
-    }
-
-    public Place(String id, String nom, boolean occupe){
-        this.id = id;
-        this.nom = nom;
-        this.occupe = occupe;
-    }
 
     //getter et setter
 
