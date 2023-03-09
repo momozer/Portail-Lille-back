@@ -13,7 +13,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Place {
     @Id
     private String id;
-
     private String nom;
     private boolean occupe;
 

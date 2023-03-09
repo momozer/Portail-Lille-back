@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.cglib.core.Local;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -19,9 +20,9 @@ import java.util.SimpleTimeZone;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Event {
+    @Id
     private String id;
-
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+      @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDate dateTime;
     private Category category;
     private String lieu;
