@@ -21,12 +21,12 @@ public class IdeeController {
         return ideeService.findAll();
     }
 
-    @PostMapping("")
+    @PostMapping("/create")
     public Idee save(@RequestBody Idee entity) {
         return ideeService.save(entity);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Idee findById(@PathVariable String id) {
         return ideeService.findById(id);
     }
